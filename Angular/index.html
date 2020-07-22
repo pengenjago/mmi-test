@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <title>Data Employee</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+     <script src="js/app.js"></script>
+     <script src="js/controllers/MainController.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/util.css">
+     <link rel="stylesheet" type="text/css" href="css/main.css">
+     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="FirstApp">
+     <div ng-controller="MainController">
+          <div class="limiter">
+               <div class="container-table100">
+                    <div class="wrap-table100">
+                         <div class="table100 ver2 m-b-110">
+                              <div class="table100-head">
+                                   <table>
+                                        <thead>
+                                             <tr class="row100 head">
+                                                  <th class="cell100 column1" hidden>No</th>
+                                                  <th class="cell100 column2">Nama</th>
+                                                  <th class="cell100 column3">Tanggal Lahir</th>
+                                                  <th class="cell100 column4">Jabatan</th>
+                                                  <th class="cell100 column5">NIP</th>
+                                                  <th class="cell100 column6">Jenis Kelamin</th>
+                                             </tr>
+                                        </thead>
+                                   </table>
+                              </div>
+                              <div class="table100-body js-pscroll">
+                                   <table>
+                                        <tbody>
+                                             <tr ng-repeat="emp in employees" class="row100 body">
+                                                  <td class="cell100 column1" hidden>{{emp.id}}</td>
+                                                  <td class="cell100 column2">{{emp.name}}</td>
+                                                  <td class="cell100 column3">{{emp.birthDate}}</td>
+                                                  <td class="cell100 column4">{{emp.positionName}}</td>
+                                                  <td class="cell100 column5">{{emp.idNumber}}</td>
+                                                  <td class="cell100 column6" ng-if="emp.gender == '1'">Laki-laki</td>
+                                                  <td class="cell100 column6" ng-if="emp.gender == '2'">Perempuan</td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</body>
+
+</html>
